@@ -8,8 +8,6 @@ const App = () => {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
-
-        12
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
