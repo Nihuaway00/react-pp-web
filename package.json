@@ -60,9 +60,11 @@
   "overrides": {
     "eslint": "^9.9.0"
   },
+  "prettier": "prettier-config-nick",
   "lint-staged": {
     "**/*.{js,jsx.ts.tsx}": [
-      "npx eslint --fix"
+      "npx prettier --write",
+      "npx eslint . --fix"
     ]
   }
 }
