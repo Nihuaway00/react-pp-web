@@ -12,9 +12,7 @@ export default function RootLayout({children}: Readonly<{ children: ReactNode; }
         <StoreWrapper>
             <html lang="en">
             <body className={inter.className}>
-            <div>
                 {children}
-            </div>
             </body>
             </html>
         </StoreWrapper>
