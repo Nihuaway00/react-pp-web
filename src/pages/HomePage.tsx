@@ -1,7 +1,9 @@
+import HomeForm from "@/features/HomeForm";
+
 export default function HomePage(){
     return (
         <div>
-            Home Page
+            <HomeForm />
         </div>
     )
 }
