@@ -1,22 +1,19 @@
-import axios from "axios";
+import axios from 'axios';
 // *** в этом файле будет промежуточная обработка запросов ***
 
 const axiosIns = axios.create({
-  // eslint-disable-next-line no-undef
   baseURL: process.env.APP_URL,
 });
 
-axiosIns.interceptors.request.use(onFulfilled, (error) =>
-  Promise.reject(error)
-);
+axiosIns.interceptors.request.use(onFulfilled, error => Promise.reject(error));
 
-axiosIns.interceptors.response.use((response) => response, onRejected);
+axiosIns.interceptors.response.use(response => response, onRejected);
 
-function onFulfilled(config: any) {
+function onFulfilled(config: unknown) {
   return config;
 }
 
-async function onRejected(error: any) {
+async function onRejected(error: unknown) {
   const { config: originalRequest, response } = error;
 
   if (response && response.status === 401) {
@@ -24,6 +21,7 @@ async function onRejected(error: any) {
       resolve(axiosIns(originalRequest));
 
       reject(error);
+      // ('');
     });
   }
 
